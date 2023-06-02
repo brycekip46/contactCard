@@ -15,12 +15,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  List<Contact> contacts = [
-  Contact(name: "John Kiriamiti", email: "John@gmail.com", phone: "1234567890"),
-  Contact(name: "Bryce Kip", email: "bryce@gmail.com", phone: "1234567890"),
-    Contact(name: "John Kiriamiti", email: "John@gmail.com", phone: "1234567890"),
 
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -30,28 +25,11 @@ class _MyAppState extends State<MyApp> {
         centerTitle: true,
         backgroundColor: Colors.black87,
       ),
-      body:Container(
-        color: Colors.black,
-        child: Column(
-          children: contacts.map((contact) => Contact_card(contact: contact,
-          delete: (){
-            setState(() {
-              contacts.remove(contact);
-            });
-          },
-          )).toList(),
-
-
-        ),
+      body: Container(
+        child:Contact_card(),
       ),
         floatingActionButton: FloatingActionButton(
-          onPressed: (){
-            setState(() {
-              contacts.add(Contact(name: "John Kiriamiti",
-                  email: "kiriamiti@gmail.com",
-                  phone: "1234567890"));
-
-            });},
+          onPressed: (){},
           backgroundColor: Colors.blueAccent,
           child: const Icon(Icons.add),
         )
